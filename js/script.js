@@ -29,6 +29,8 @@ let pokemonList = [
 
 ];
 
+//for loop that iterates over each item in pokemonList:
+
 for (let i = 0; i < pokemonList.length; i++) {
     document.write(
       "<p>" + (i + 1) + ": " + pokemonList[i].name + ": Pokémon name" + "</p>"

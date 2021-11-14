@@ -52,7 +52,6 @@ return{
 
 })();
 
-
   // Use of forEach() Loop to iterate over pokemonList: 
 
   document.write("</br>")

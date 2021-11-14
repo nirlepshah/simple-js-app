@@ -1,4 +1,4 @@
-// wrapping your pokemonList array in an IIFE 
+// wrapping pokemonList array in an IIFE 
 
 let pokemonRepository = (function(){
 
@@ -31,8 +31,26 @@ let pokemonList = [
       weight: 28   
   }
 
+];
+// functions to add item to the pokemonList 
+function add(pokemon){
+  pokemonList.push(pokemon);
 
+}
 
+// function to return all the items of the pokemonList array
+
+function getAll(){
+  return pokemonList;
+}
+// IIFE returns only an object with the same names for keys as values
+
+return{
+  add: add,
+  getAll: getAll,
+}
+
+})();
 
 
   // Use of forEach() Loop to iterate over pokemonList: 
@@ -53,4 +71,4 @@ else{
   }
  }
     
- pokemonList.forEach(myFunction);
+ pokemonRepository.getAll().forEach(myFunction);

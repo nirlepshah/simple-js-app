@@ -31,33 +31,23 @@ let pokemonList = [
 
 //for loop that iterates over each item in pokemonList:
 
-for (let i = 0; i < pokemonList.length; i++) {
-    document.write(
-      "<p>" + (i + 1) + ": " + pokemonList[i].name + ": Pokémon name" + "</p>"
-    );
-  
-    if (pokemonList[i].height > 2) {
-      document.write(
-        "<p>" +
-          '"' +
-          pokemonList[i].name +
-          " (height:" +
-          pokemonList[i].height +
-          ") - Wow, that's big\"" +
-          "<p>" +
-          "-----"
-      );
-    } else {
-      document.write(
-        "<p>" +
-          '"' +
-          " " +
-          pokemonList[i].name +
-          " (height:" +
-          pokemonList[i].height +
-          ')"' +
-          "<p>" +
-          "-----"
-      );
-    }
+
+  // Use of forEach() Loop to iterate over pokemonList: 
+
+  document.write("</br>")
+
+  function myFunction(pokemon, index)  {
+ 
+    
+  if (pokemon.height>2){
+    document.write(` <p> ${index+1} :  ${pokemon.name} = Pokemon name </br>`);
+    document.write(`<p> ${pokemon.name} (height:${pokemon.height}) - Wow that's big </br>`)
+    
   }
+else{
+  document.write(`<p> ${index+1} :  ${pokemon.name} = Pokemon name </br>` );
+  document.write(` <p> ${pokemon.name} (height:${pokemon.height})</br> `)
+  }
+ }
+    
+ pokemonList.forEach(myFunction);

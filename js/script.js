@@ -61,8 +61,7 @@ pokemonRepository.add({name: "Pidgeot", height: 4, type:"Bird", weight:87 });
   document.write("</br>")
 
   function myFunction(pokemon, index)  {
- 
-    
+     
   if (pokemon.height>2){
     document.write(` <p> ${index+1} :  ${pokemon.name} = Pokemon name </br>`);
     document.write(`<p> ${pokemon.name} (height:${pokemon.height}) - Wow that's big </br>`)

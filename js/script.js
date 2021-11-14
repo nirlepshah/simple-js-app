@@ -52,6 +52,10 @@ return{
 
 })();
 
+// Use of add function to add item in the pokemonList
+
+pokemonRepository.add({name: "Pidgeot", height: 4, type:"Bird", weight:87 });
+
   // Use of forEach() Loop to iterate over pokemonList: 
 
   document.write("</br>")

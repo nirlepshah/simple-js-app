@@ -1,3 +1,7 @@
+// wrapping your pokemonList array in an IIFE 
+
+let pokemonRepository = (function(){
+
 let pokemonList = [
   {
    name: 'Caterpie',
@@ -27,9 +31,8 @@ let pokemonList = [
       weight: 28   
   }
 
-];
 
-//for loop that iterates over each item in pokemonList:
+
 
 
   // Use of forEach() Loop to iterate over pokemonList: 

@@ -33,8 +33,16 @@ let pokemonList = [
 
 ];
 // functions to add item to the pokemonList 
+// function will check of the datatype of the element inserted is object or not
+
 function add(pokemon){
-  pokemonList.push(pokemon);
+  if(typeof (pokemon) === 'object'){
+
+      pokemonList.push(pokemon);
+  }
+  else{
+    document.write('Add element of data type object ')
+  }
 
 }
 

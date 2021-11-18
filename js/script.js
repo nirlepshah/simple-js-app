@@ -59,11 +59,18 @@ function ShowDetails(pokemon){
   
 }
 
+// function to chnage background color
+
+function changeBackground(color) {
+  document.body.style.background = color;
+} 
+
 // function dedicated for adding event listener to the newly created button
 
 function addEvent1(button, pokemon){
   button.addEventListener('click', function(){
-    ShowDetails(pokemon)
+    ShowDetails(pokemon);
+    changeBackground('lightblue');
   })
 
 }

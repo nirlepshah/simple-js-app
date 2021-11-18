@@ -51,20 +51,39 @@ function add(pokemon){
 function getAll(){
   return pokemonList;
 }
+
+
+// function to add list item and button to hold pokemon object and add styling 
+
+function addListItem(pokemon) {
+  let myVar = document.querySelector(".pokemon-list");
+  let listItem = document.createElement("li");
+  let button = document.createElement("button");
+  button.innerText = pokemon.name;
+  button.classList.add("my_class");
+  listItem.appendChild(button);
+  myVar.appendChild(listItem);
+  document.write('<br>')
+  addEvent1(button, pokemon);
+}
+
 // IIFE returns only an object with the same names for keys as values
 
 return{
   add: add,
   getAll: getAll,
+  addListItem: addListItem,
 }
 
 })();
+
+document.write("</br>")
 
 // Use of add function to add item in the pokemonList
 
 pokemonRepository.add({name: "Pidgeot", height: 4, type:"Bird", weight:87 });
 
-  // Use of forEach() Loop to iterate over pokemonList: 
+/*  // Use of forEach() Loop to iterate over pokemonList: 
 
   document.write("</br>")
 
@@ -79,6 +98,6 @@ else{
   document.write(`<p> ${index+1} :  ${pokemon.name} = Pokemon name </br>` );
   document.write(` <p> ${pokemon.name} (height:${pokemon.height})</br> `)
   }
- }
-    
- pokemonRepository.getAll().forEach(myFunction);
+ } 
+    */
+

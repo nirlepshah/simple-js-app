@@ -52,6 +52,12 @@ function getAll(){
   return pokemonList;
 }
 
+//function to run a console.log() on the Pokémon object 
+
+function ShowDetails(pokemon){
+  console.log(pokemon);
+  
+}
 
 // function to add list item and button to hold pokemon object and add styling 
 

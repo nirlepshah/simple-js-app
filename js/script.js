@@ -59,6 +59,15 @@ function ShowDetails(pokemon){
   
 }
 
+// function dedicated for adding event listener to the newly created button
+
+function addEvent1(button, pokemon){
+  button.addEventListener('click', function(){
+    ShowDetails(pokemon)
+  })
+
+}
+
 // function to add list item and button to hold pokemon object and add styling 
 
 function addListItem(pokemon) {

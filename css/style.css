@@ -39,3 +39,11 @@
      bottom: 0;
   }
   
+  .my_class{
+    border-style: solid;
+    background-color: lightgrey;
+    color: black;
+    border-color: green;
+    padding: 2rem;
+    margin: 5px;
+}

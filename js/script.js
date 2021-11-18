@@ -113,8 +113,8 @@ else{
   document.write(`<p> ${index+1} :  ${pokemon.name} = Pokemon name </br>` );
   document.write(` <p> ${pokemon.name} (height:${pokemon.height})</br> `)
   }
- } 
-    */
+ } */
+ 
    // Foreach function to fetch and display each Pokemon object in list and button element
  function myFunction(pokemon)
  {

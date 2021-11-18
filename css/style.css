@@ -6,6 +6,7 @@
     position: relative;
     min-height: 100vh;
     background-color: #f1f1f1;
+    padding-left: 2px;
     
   }
   .container {
@@ -38,7 +39,7 @@
      margin-top: 2px;
      bottom: 0;
   }
-  
+
   
   .my_class{
     border-style: solid;
@@ -47,4 +48,11 @@
     border-color: green;
     padding: 2rem;
     margin: 5px;
+}
+.pokemon-list {
+padding: 20px;
+}
+.box{
+  display: flex;
+   justify-content: center;
 }

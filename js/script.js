@@ -115,4 +115,11 @@ else{
   }
  } 
     */
-
+   // Foreach function to fetch and display each Pokemon object in list and button element
+ function myFunction(pokemon)
+ {
+   
+   pokemonRepository.addListItem(pokemon);
+ }
+  
+  pokemonRepository.getAll().forEach(myFunction);

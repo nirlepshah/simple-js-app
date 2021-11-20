@@ -7,28 +7,33 @@ let pokemonList = [
    name: 'Caterpie',
    height: 2,
    type: 'bug' ,
-   weight: 3   
+   weight: 3, 
+   imgFile: './img/Caterpie.png' 
+   
   }, 
   
   {
       name: 'Charmeleon',
       height: 1,
       type: 'bug' ,
-      weight: 19   
+      weight: 19,   
+      imgFile: './img/Charmeleon.png'
   }, 
   
   {
       name: 'Parasect',
       height: 1,
       type: ['grass', 'bug'] ,
-      weight: 3   
+      weight: 3,   
+      imgFile: './img/Parasect.png'
   },
 
   {
       name: 'Sneasel',
       height: 3,
       type: ['dark', 'ice'] ,
-      weight: 28   
+      weight: 28,
+      imgFile: './img/Sneasel.png'   
   }
 
 ];
@@ -36,7 +41,7 @@ let pokemonList = [
 // function will check of the datatype of the element inserted is object or not
 
 function add(pokemon){
-  if(typeof (pokemon) === 'object'){
+  if(pokemon.hasOwnProperty('name') && pokemon.hasOwnProperty('height') && pokemon.hasOwnProperty('type') && pokemon.hasOwnProperty('weight') && pokemon.hasOwnProperty('imgFile')){
 
       pokemonList.push(pokemon);
   }
@@ -67,26 +72,28 @@ function changeBackground(color) {
 
 // function dedicated for adding event listener to the newly created button
 
-function addEvent1(button, pokemon){
+function addShowDetailsListener(button, pokemon){
   button.addEventListener('click', function(){
     ShowDetails(pokemon);
     changeBackground('lightblue');
+    // let img = document.createElement('img');
+    // img.src = "./img/Caterpie.png"
+    // document.body.appendChild(img)
   })
-
 }
 
 // function to add list item and button to hold pokemon object and add styling 
 
 function addListItem(pokemon) {
+  
   let myVar = document.querySelector(".pokemon-list");
   let listItem = document.createElement("li");
   let button = document.createElement("button");
-  button.innerText = pokemon.name;
-  button.classList.add("my_class");
+   button.innerText = pokemon.name;
   listItem.appendChild(button);
-  myVar.appendChild(listItem);
-  document.write('<br>')
-  addEvent1(button, pokemon);
+   button.classList.add("my_class");
+   myVar.appendChild(listItem);
+   
 }
 
 // IIFE returns only an object with the same names for keys as values
@@ -99,34 +106,19 @@ return{
 
 })();
 
-document.write("</br>")
+
 
 // Use of add function to add item in the pokemonList
 
-pokemonRepository.add({name: "Pidgeot", height: 4, type:"Bird", weight:87 });
+pokemonRepository.add({name: "Pidgeot", height: 4, type:"Bird", weight:87, imgFile:"./img/Pidgeot.png" });
 
-/*  // Use of forEach() Loop to iterate over pokemonList: 
 
-  document.write("</br>")
 
-  function myFunction(pokemon, index)  {
-     
-  if (pokemon.height>2){
-    document.write(` <p> ${index+1} :  ${pokemon.name} = Pokemon name </br>`);
-    document.write(`<p> ${pokemon.name} (height:${pokemon.height}) - Wow that's big </br>`)
-    
-  }
-else{
-  document.write(`<p> ${index+1} :  ${pokemon.name} = Pokemon name </br>` );
-  document.write(` <p> ${pokemon.name} (height:${pokemon.height})</br> `)
-  }
- } */
- 
    // Foreach function to fetch and display each Pokemon object in list and button element
  function myFunction(pokemon)
  {
-   
-   pokemonRepository.addListItem(pokemon);
+      pokemonRepository.addListItem(pokemon);
+
  }
   
   pokemonRepository.getAll().forEach(myFunction);

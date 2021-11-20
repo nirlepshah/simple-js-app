@@ -93,6 +93,23 @@ function addListItem(pokemon) {
   listItem.appendChild(button);
    button.classList.add("my_class");
    myVar.appendChild(listItem);
+   let span = document.createElement("span")
+   span.innerText = ` Height is ${pokemon.height}.`;
+   listItem.appendChild(span);
+   let span1 = document.createElement("span")
+   span1.innerText = ` Weight is ${pokemon.weight}.`;
+   listItem.appendChild(span1);
+   let span3 = document.createElement("span")
+   span3.innerText = ` Type is ${pokemon.type}.`;
+   listItem.appendChild(span3);
+   addShowDetailsListener(button, pokemon);
+   let img = document.createElement("img");
+   img.src = pokemon.imgFile;
+   listItem.appendChild(span3);
+   let span4 = document.createElement("span");
+   span4.innerText = ` Image of ${pokemon.name} is : `
+   listItem.appendChild(span4);
+   listItem.appendChild(img);
    
 }
 

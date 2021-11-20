@@ -81,7 +81,6 @@ function addShowDetailsListener(button, pokemon){
     // document.body.appendChild(img)
   })
 }
-
 // function to add list item and button to hold pokemon object and add styling 
 
 function addListItem(pokemon) {

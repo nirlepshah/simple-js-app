@@ -73,6 +73,8 @@ let pokemonList = [];
       console.error(e);
     });
   }
+  // function to display pokemon object on the console.
+
   function showDetails(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function () {
       console.log(pokemon);
@@ -85,8 +87,8 @@ let pokemonList = [];
     getAll: getAll,
     addListItem: addListItem,
     loadList: loadList,
-    loadDetails: loadDetails
-    howDetails: showDetails
+    loadDetails: loadDetails,
+    showDetails: showDetails
   }
   
   })();

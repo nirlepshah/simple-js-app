@@ -4,7 +4,7 @@ let pokemonRepository = (function(){
 
   const pokemonList = [];
   const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=75'
-  const loader = document.querySelector('loader')
+  
 
   // functions to add item to the pokemonList and  will check the datatype of the element inserted has required property
   
@@ -109,13 +109,6 @@ let pokemonRepository = (function(){
   })();
   
   
-  // Use of add function to add item in the pokemonList
-  
-  // pokemonRepository.add({name: "Pidgeot", height: 4, type:"Bird", weight:87, imgFile:"./img/Pidgeot.png" });
-  
-  // console.log(pokemonRepository.getAll());
-  
-     // Foreach function to fetch and display each Pokemon object in list and button element
 
     pokemonRepository.loadList().then(function() {
 

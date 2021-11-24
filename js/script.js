@@ -58,7 +58,21 @@ let pokemonList = [];
     })
   }
  
-  
+  // function to fetch parameter details of the Pokemon from the external source
+
+  function loadDetails(pokemon) {
+    let url = pokemon.detailsUrl;
+    return fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (details) {
+      // Now we add the details to the item
+      pokemon.imageUrl = details.sprites.front_default;
+      pokemon.height = details.height;
+      pokemon.types = details.types;
+    }).catch(function (e) {
+      console.error(e);
+    });
+  }
 
   // IIFE returns only an object with the same names for keys as values
   
@@ -67,7 +81,7 @@ let pokemonList = [];
     getAll: getAll,
     addListItem: addListItem,
     loadList: loadList,
-    
+    loadDetails: loadDetails
   }
   
   })();

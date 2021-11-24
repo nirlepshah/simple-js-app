@@ -83,10 +83,10 @@ let pokemonRepository = (function(){
       // Now we add the details to the item
       pokemon.imageUrl = details.sprites.front_default;
       pokemon.height = details.height;
-      pokemon.types = detail
-      hideLoadingMessage();
-      console.error(e);
-    });
+      pokemon.types = details.types;})
+      .catch(function (e) {
+        console.error(e);
+    })
   }
   // function to display pokemon object on the console.
 

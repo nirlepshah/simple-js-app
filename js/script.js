@@ -2,49 +2,61 @@
 
 let pokemonRepository = (function(){
 
-let pokemonList = [];
-    
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150'
+  const pokemonList = [];
+  const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=75'
+  const loader = document.querySelector('loader')
 
-  // functions to add item to the pokemonList 
-  // function will check of the datatype of the element inserted is object or not
+  // functions to add item to the pokemonList and  will check the datatype of the element inserted has required property
   
   function add(pokemon){
     if(pokemon.hasOwnProperty('name') && pokemon.hasOwnProperty('detailsUrl'))
         pokemonList.push(pokemon);
-     
-  }
+       }
   
   // function to return all the items of the pokemonList array
   
   function getAll(){
     return pokemonList;
   }
-  
-
+  //function to change background color
+  function changeBackground(color) {
+    document.body.style.background = color;
+  } 
   // function to add list item and button to hold pokemon object and add styling 
   
   function addListItem(pokemon) {
     
-    let myVar = document.querySelector(".pokemon-list");
-    let listItem = document.createElement("li");
-    let button = document.createElement("button");
+    const myVar = document.querySelector(".pokemon-list");
+    const listItem = document.createElement("li");
+    const button = document.createElement("button");
     button.innerText = pokemon.name;
     listItem.appendChild(button);
-     button.classList.add("my_class");
-     myVar.appendChild(listItem);
+    button.classList.add("my_class");
+    myVar.appendChild(listItem);
     button.addEventListener('click', function(event){
-      showDetails(pokemon);
+    showDetails(pokemon);
+    changeBackground('lightblue')
      })  
   }
+// function to add Loading message while page has not loaded 
 
-  // fucntion to load data from external source.
+  function showLoadingMessage() {
+    window.onload = function(){ document.getElementById("loading").style.display = "none" }
+  }
+  // function to remove  Loading message while page has been loaded 
+  function hideLoadingMessage(){
+    window.onload = function(){ document.getElementById("loading").style.display = "block" }
+  }
+
+  // function to load data from external source.
   
   function loadList(){
-    
+    showLoadingMessage();
     return fetch(apiUrl).then(function (response){
+      
       return response.json();
     }).then(function(json){
+      hideLoadingMessage()
       json.results.forEach(function(item){
         let pokemon = {
           name: item.name,
@@ -54,6 +66,7 @@ let pokemonList = [];
         console.log(pokemon);
       });
     }).catch(function (e) {
+      hideLoadingMessage();
     console.log(e)  
     })
   }
@@ -61,15 +74,17 @@ let pokemonList = [];
   // function to fetch parameter details of the Pokemon from the external source
 
   function loadDetails(pokemon) {
+    showLoadingMessage();
     let url = pokemon.detailsUrl;
     return fetch(url).then(function (response) {
       return response.json();
     }).then(function (details) {
+      hideLoadingMessage();
       // Now we add the details to the item
       pokemon.imageUrl = details.sprites.front_default;
       pokemon.height = details.height;
-      pokemon.types = details.types;
-    }).catch(function (e) {
+      pokemon.types = detail
+      hideLoadingMessage();
       console.error(e);
     });
   }

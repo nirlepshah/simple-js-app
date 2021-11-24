@@ -73,7 +73,11 @@ let pokemonList = [];
       console.error(e);
     });
   }
-
+  function showDetails(pokemon) {
+    pokemonRepository.loadDetails(pokemon).then(function () {
+      console.log(pokemon);
+    });
+  }
   // IIFE returns only an object with the same names for keys as values
   
   return{
@@ -82,6 +86,7 @@ let pokemonList = [];
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails
+    howDetails: showDetails
   }
   
   })();

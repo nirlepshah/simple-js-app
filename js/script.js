@@ -95,7 +95,7 @@ let pokemonRepository = (function(){
     });
   }
 
-  
+  // fucntion to dispaly additional details of the pokemon on the screen
   function showAdditionalDetails(pokemon){
     window.scrollTo(0, 0)
     let placeHolder = document.querySelector(".Container")
@@ -133,6 +133,8 @@ let pokemonRepository = (function(){
      });
     })
     }
+
+    // function to clear the contents
 
     function clear()  {
       let clearContent = document.querySelector(".Container")

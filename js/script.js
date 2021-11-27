@@ -25,7 +25,6 @@ let pokemonRepository = (function(){
   // function to add list item and button to hold pokemon object and add styling 
   
   function addListItem(pokemon) {
-    
     const myVar = document.querySelector(".pokemon-list");
     const listItem = document.createElement("li");
     const button = document.createElement("button");
@@ -95,6 +94,45 @@ let pokemonRepository = (function(){
       console.log(pokemon);
     });
   }
+
+  
+  function showAdditionalDetails(pokemon){
+    window.scrollTo(0, 0)
+    let placeHolder = document.querySelector(".Container")
+    placeHolder.classList.add("align")
+    let note = document.createElement("p")
+    note.innerText=`Note: Hit "Cancel" to move back to the Pokemon list`
+    note.classList.add("note")
+    placeHolder.appendChild(note)
+    let name = document.createElement('p')
+    name.innerText=`Name of the pokemon is "${pokemon.name}"`
+    placeHolder.appendChild(name)
+    let imageName = document.createElement('p')
+    imageName.innerText = `Image of "${pokemon.name}" is:`
+    placeHolder.appendChild(imageName)
+    let imgElement = document.createElement('img')
+    imgElement.src = pokemon.imageUrl;
+    placeHolder.appendChild(imgElement);
+    placeHolder.appendChild(document.createElement("br"));    
+    let heightElement = document.createElement('p');
+    heightElement.innerText = `Height of "${pokemon.name}" is: ${pokemon.height}`;
+    placeHolder.appendChild(heightElement);
+    placeHolder.appendChild(document.createElement("br"));
+    let button = document.createElement('button')
+    button.innerText="Cancel"
+    placeHolder.appendChild(button)
+    button.classList.add("buttonCLass")
+    document.querySelector('.buttonCLass').addEventListener('click',function(){
+     document.getElementsByClassName('my_class').disabled = true
+     clear();
+     pokemonRepository.loadList().then(function() {
+     pokemonRepository.getAll().forEach(function(pokemon)
+     {
+      pokemonRepository.addListItem(pokemon);
+     });
+     });
+    })
+    }
   // IIFE returns only an object with the same names for keys as values
   
   return{
@@ -108,9 +146,7 @@ let pokemonRepository = (function(){
   
   })();
   
-  
-
-    pokemonRepository.loadList().then(function() {
+        pokemonRepository.loadList().then(function() {
 
         pokemonRepository.getAll().forEach(function(pokemon)
         {

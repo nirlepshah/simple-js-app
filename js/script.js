@@ -133,6 +133,11 @@ let pokemonRepository = (function(){
      });
     })
     }
+
+    function clear()  {
+      let clearContent = document.querySelector(".Container")
+      clearContent.innerHTML="";
+   }
   // IIFE returns only an object with the same names for keys as values
   
   return{

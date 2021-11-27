@@ -93,3 +93,22 @@
      }
 }
 
+.align{
+  text-align: center;
+  margin-top: 75px;
+  margin: 0 auto;
+  width: 338px;
+  
+  }
+  .buttonCLass{
+    margin-bottom: 5px;
+      }
+      .buttonCLass:hover{
+        cursor: pointer;
+      }
+  .note{
+color: red;
+font-style: italic;
+font-weight: bold;
+border: 3px solid red;
+  }

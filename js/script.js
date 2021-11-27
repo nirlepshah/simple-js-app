@@ -25,13 +25,13 @@ let pokemonRepository = (function(){
   // function to add list item and button to hold pokemon object and add styling 
   
   function addListItem(pokemon) {
-    const myVar = document.querySelector(".pokemon-list");
-    const listItem = document.createElement("li");
-    const button = document.createElement("button");
+    let item = document.querySelector(".pokemon-list");
+    let listItem = document.createElement("li");
+    let button = document.createElement("button");
     button.innerText = pokemon.name;
     listItem.appendChild(button);
     button.classList.add("my_class");
-    myVar.appendChild(listItem);
+    item.appendChild(listItem);
     button.addEventListener('click', function(event){
     showDetails(pokemon);
     changeBackground('lightblue')

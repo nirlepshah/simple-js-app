@@ -34,7 +34,7 @@ let pokemonRepository = (function(){
     item.appendChild(listItem);
     button.addEventListener('click', function(event){
     showDetails(pokemon);
-    changeBackground('lightblue')
+    item.innerHTML=""
      })  
   }
 // function to add Loading message while page has not loaded 
@@ -91,7 +91,7 @@ let pokemonRepository = (function(){
 
   function showDetails(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function () {
-      console.log(pokemon);
+      showAdditionalDetails(pokemon);
     });
   }
 

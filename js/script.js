@@ -130,7 +130,7 @@ let pokemonRepository = (function(){
       messages.push(item.type.name)
         
     });
-    nameElement.innerText = `Type of the "${pokemon.name}" is: ${messages.join(' , ')}`
+    nameElement.innerText = `Type of  "${pokemon.name}" is: ${messages.join(' , ')}`
 
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);

@@ -13,17 +13,19 @@ body {
 }
 .container {
   width: 100vw;
-  height: auto;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   
 }
 header {
   background-color: gray;
-  width: 100vw;
-  height: 3rem;
+  height: 4rem;
   text-align: center;
   font-size: xx-large;
+  
+  border: 2px solid black ;
+  padding-top: 10px;
 }
 p {
   font-size: small;
@@ -37,6 +39,7 @@ footer {
   height: 3rem;
   background-color: gray;
   position: absolute;
+  padding-bottom: 0px;
    margin-top: 2px;
    bottom: 0;
 }
@@ -60,9 +63,9 @@ footer {
   }
 .pokemon-list {
 display: 100vh;
-height: auto;
+min-height: 100vh;
 width: auto;
-/* border: 0.2rem solid black; */
+border: 0.2rem solid black;
 margin-left: 0.2rem;
 padding: 10px;
 display: grid;
@@ -92,10 +95,10 @@ list-style-type: none;
    }
 }
 
-html, body{
-
+/* html, body{
   font-family: Arial, Helvetica, sans-serif;
-} 
+  
+}  */
 
 #modal-container.is-visible {
   display: block;
@@ -136,7 +139,9 @@ html, body{
   float: right;
   border: none;
   background: none;
-  color:#777;
+  color: red;
+  font-weight: bold;
+  font-size: large;
   text-decoration: underline;
   
 }

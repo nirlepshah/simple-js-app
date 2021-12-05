@@ -99,3 +99,55 @@ html, body{
   font-family: Arial, Helvetica, sans-serif;
   
 } 
+
+.btn-secondary{
+  background-color: red;
+}
+
+.navbar-brand{
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+  
+  text-decoration: underline;
+}
+
+.nav-link{
+  font-size: 20px;
+  
+}
+
+.btn-outline-success{
+  background-color: lightblue;
+  color: black;
+}
+.btn-outline-success:hover{
+  background-color: lightpink;
+  color: black;
+}
+
+#navbarSupportedContent{
+  color: tomato;
+  font-size: 30px;
+}
+
+.navbar{
+  height: auto;
+  }
+  .modal-body{
+font-size: 205px;
+
+  }
+  .modalTitle{
+    font: large;
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  .modalBody{
+    font-size: x-large;
+    font-weight: bold;
+    font-style: normal;
+    color: blue;
+    
+  }

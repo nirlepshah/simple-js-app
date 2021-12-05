@@ -96,72 +96,50 @@ let pokemonRepository = (function(){
     });
   }
 
-  // Function to display modal when Pokemon button on the document is clicked 
+  // Implementing Bootstrap Modal 
+
   function showModal(pokemon){
     
-    let modalContainer = document.querySelector('#modal-container');
-    let modal = document.createElement('div');
-    modalContainer.innerHTML = ''
-    modal.classList.add('modal');
-
-    let closeButtonElement = document.createElement('button');
-    closeButtonElement.classList.add('modal-close');
-    closeButtonElement.innerText = 'Close';
-    closeButtonElement.addEventListener('click', hideModal);
-
-    let titleElement = document.createElement('h1');
-    titleElement.innerText = pokemon.name;
-
-    let contentElement = document.createElement('p');
-    contentElement.innerText = `Height of "${pokemon.name}" is: ${pokemon.height}`;
-
-    let imgElement = document.createElement('img');
-    imgElement.src = pokemon.imageUrl;
-    let imgText = document.createElement('p')
-    imgText.innerText = `Image of "${pokemon.name}" is:`
-    let nameElement = document.createElement('p')
     
-    // array to store pokemon type
-    let messages = [];
+    let modalBody = $('.modal-body');
+    let modalTitle = $('.modal-title');
+    modalTitle.empty();
+    modalBody.empty();
 
-    // looping though each each type of the pokemon and adding types in message array and finaly printing on Modal Container
-    pokemon.types.forEach(item => {
-            
-      messages.push(item.type.name)
+  
+      let titleElement = $('<h1>' + pokemon.name + '</h1>') 
+      modalTitle.addClass("modalTitle");
+      modalBody.addClass("modalBody");
+      let contentElement = $('<p>' + 'Height of ' + pokemon.name + ' is ' + pokemon.height + '<p>');
         
-    });
-    nameElement.innerText = `Type of  "${pokemon.name}" is: ${messages.join(' , ')}`
-
-    modal.appendChild(closeButtonElement);
-    modal.appendChild(titleElement);
-    modal.appendChild(contentElement);
-    modal.appendChild(nameElement);
-    modal.appendChild(imgText);
-
-    modal.appendChild(imgElement);
-
-    modalContainer.appendChild(modal);
-    modalContainer.classList.add('is-visible');
-//Function to Hide Modal container
-    function hideModal() {
-      let modalContainer = document.querySelector('#modal-container');
-      modalContainer.classList.remove('is-visible');
-      }
-//Escape key Event Listner
-    window.addEventListener('keydown', (e) => {
+      let imgElement = $('<img  style="width:50%">')
+      imgElement.attr('src', pokemon.imageUrl);
       
-      if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-        hideModal();
-      }
-    });
-// Click outside Modal container Event Listner 
-    modalContainer.addEventListener('click', (e) => {
-      let target = e.target;
-      if (target === modalContainer) {
-        hideModal();
+                 
+      //array to store pokemon type
+      let messages = [];
+  
+      // looping though each each type of the pokemon and adding types in message array and finaly printing on Modal Container
+      pokemon.types.forEach(item => {
+              
+        messages.push(item.type.name)
+          
+      });
+
+      let nameElement = $('<p>' + 'Type of ' + pokemon.name + ' is: ' + messages.join(' , ') + '</p>')
+  
+      
+      modalTitle.append(titleElement);
+      modalBody.append(contentElement);
+      modalBody.append(imgElement);
+      modalBody.append(nameElement);
+
+      $('#exampleModal').modal('show')
+    
     }
-    });
-}
+  
+    
+   
   // IIFE returns only an object with the same names for keys as values
   
   return{

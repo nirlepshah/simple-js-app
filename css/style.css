@@ -101,13 +101,13 @@ list-style-type: none;
 .navbar-brand{
   color: black;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 20px;
   
   text-decoration: underline;
 }
 
 .nav-link{
-  font-size: 20px;
+  font-size: 16px;
   
 }
 

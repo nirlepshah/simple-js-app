@@ -17,7 +17,7 @@ body {
     .heading {
       display: block;
       padding-right: 35rem;
-      font-size: xx-large;
+      font-size: large;
       }
 
 p {
@@ -106,10 +106,6 @@ list-style-type: none;
   text-decoration: underline;
 }
 
-.nav-link{
-  
-  
-}
 
 .btn-outline-success{
   background-color: lightblue;

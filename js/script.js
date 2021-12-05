@@ -25,7 +25,7 @@ let pokemonRepository = (function(){
   // function to add list item and button to hold pokemon object and add styling 
   
   function addListItem(pokemon) {
-    let item = document.querySelector(".pokemon-list");
+    let item = document.querySelector(".list-group");
     let listItem = document.createElement("li");
     let button = document.createElement("button");
     button.innerText = pokemon.name;

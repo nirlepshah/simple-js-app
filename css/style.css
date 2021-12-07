@@ -38,7 +38,7 @@ footer {
 }
 
 
-.my_class{
+.btnElement{
   border-style: solid;
   background-color: lightgrey;
   color: black;
@@ -53,19 +53,19 @@ footer {
 
 
   }
-  .my_class:hover{
+  .btnElement:hover{
     cursor: pointer;
   }
 .list-group {
+display: block;
 display: 100vh;
 min-height: 100vh;
 width: auto;
-
-margin-left: 0.2rem;
 padding: 10px;
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr ;
 list-style-type: none;
+text-align: center;
 
 }
 

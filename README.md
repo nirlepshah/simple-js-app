@@ -2,7 +2,7 @@
 
 ## Pokédex Javascript App
 
-### &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b> <u> Project Description </u></b>
+### <b> Project Description </b>
 
 The objective of this small web application is to load data from an external source (APP), view the list of the items and on user selection (e.g., by clicking on a list item), view details for that item.
 

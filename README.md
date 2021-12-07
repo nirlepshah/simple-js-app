@@ -2,7 +2,7 @@
 
 ## Pokédex Javascript App
 
-### <pre> &nbsp; &nbsp; &nbsp; <b>Project Description</b> </pre>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b>Project Description</b>
 
 The objective of this small web application is to load data from an external source (APP), view the list of the items and on user selection (e.g., by clicking on a list item), view details for that item.
 
@@ -32,7 +32,7 @@ Pokemon images are displayed on when user clicks the [link](https://nirlepshah.g
 <br />
 ![alt Main Page](https://github.com/nirlepshah/simple-js-app/blob/main/img/LandingPage.png)
 
-Following are the details viewed when Pokémon is clicked
+Following are the details viewed when Pokémon button is clicked
 <br />
 <br />
 ![alt Pokémon Details](https://github.com/nirlepshah/simple-js-app/blob/main/img/PokemonDisplay.png)

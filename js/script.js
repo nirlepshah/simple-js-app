@@ -1,6 +1,6 @@
 // wrapping pokemonList array in an IIFE 
 
-let pokemonRepository = (function(){
+const pokemonRepository = (function(){
 
   const pokemonList = [];
   const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=75'
@@ -30,7 +30,7 @@ let pokemonRepository = (function(){
     let button = document.createElement("button");
     button.innerText = pokemon.name;
     listItem.appendChild(button);
-    button.classList.add("my_class");
+    button.classList.add("btnElement");
     item.appendChild(listItem);
     button.addEventListener('click', function(event){
     showDetails(pokemon);
@@ -113,7 +113,7 @@ let pokemonRepository = (function(){
       modalTitle.addClass("modalTitle");
       modalBody.addClass("modalBody");
       let contentElement = $('<p>' + 'Height of ' + pokemon.name + ' is ' + pokemon.height + '<p>');
-        
+      let imgText =   $('<p>' + 'Image of ' + pokemon.name + ' is as follows: ' + '<p>');
       let imgElement = $('<img  style="width:50%">')
       imgElement.attr('src', pokemon.imageUrl);
       
@@ -133,6 +133,7 @@ let pokemonRepository = (function(){
       
       modalTitle.append(titleElement);
       modalBody.append(contentElement);
+      modalBody.append(imgText);
       modalBody.append(imgElement);
       modalBody.append(nameElement);
 

@@ -23,7 +23,7 @@ The objective of this small web application is to load data from an external sou
 
 ## Project Link
 
-**[Click here](https://nirlepshah.github.io/simple-js-app/)**
+- **[Click here](https://nirlepshah.github.io/simple-js-app/)**
 
 ## Layout:
 
@@ -35,4 +35,4 @@ Pokemon images are displayed on when user clicks the [link](https://nirlepshah.g
 Following are the details viewed when Pokémon is clicked
 <br />
 <br />
-![alt Pokémon Details](https://github.com/nirlepshah/simple-js-app/blob/main/img/PokemonDisplay.png")
+![alt Pokémon Details](https://github.com/nirlepshah/simple-js-app/blob/main/img/PokemonDisplay.png)

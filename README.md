@@ -27,4 +27,8 @@ The objective of this small web application is to load data from an external sou
 
 ## Layout:
 
-Pokemon images are displayed on when user click the [link](https://nirlepshah.github.io/simple-js-app/):
+Pokemon images are displayed on when user clicks the [link](https://nirlepshah.github.io/simple-js-app/):
+![alt Main Page](https://github.com/nirlepshah/simple-js-app/blob/main/img/LandingPage.png)
+
+Following are the details viewed when Pokémon is clicked
+![alt Pokémon Details](https://github.com/nirlepshah/simple-js-app/blob/main/img/PokemonDisplay.png)

@@ -31,4 +31,5 @@ Pokemon images are displayed on when user clicks the [link](https://nirlepshah.g
 ![alt Main Page](https://github.com/nirlepshah/simple-js-app/blob/main/img/LandingPage.png)
 
 Following are the details viewed when Pokémon is clicked
-![alt Pokémon Details](https://github.com/nirlepshah/simple-js-app/blob/main/img/PokemonDisplay.png)
+
+![alt Pokémon Details](https://github.com/nirlepshah/simple-js-app/blob/main/img/PokemonDisplay.png target="\_blank")

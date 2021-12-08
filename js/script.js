@@ -9,30 +9,29 @@ const pokemonRepository = (function(){
   // functions to add item to the pokemonList and  will check the datatype of the element inserted has required property
   
   function add(pokemon){
-    if(pokemon.hasOwnProperty('name') && pokemon.hasOwnProperty('detailsUrl'))
-        pokemonList.push(pokemon);
-       }
-  
+    if(typeof pokemon == 'object' &&
+    'name' in pokemon &&
+    'detailsUrl' in pokemon) {
+    pokemonList.push(pokemon);
+}
+}
   // function to return all the items of the pokemonList array
   
   function getAll(){
     return pokemonList;
   }
-  //function to change background color
-  function changeBackground(color) {
-    document.body.style.background = color;
-  } 
+ 
   // function to add list item and button to hold pokemon object and add styling 
   
   function addListItem(pokemon) {
-    let item = document.querySelector(".list-group");
-    let listItem = document.createElement("li");
-    let button = document.createElement("button");
+    let item = document.querySelector('.list-group');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
     button.innerText = pokemon.name;
     listItem.appendChild(button);
-    button.classList.add("btnElement");
+    button.classList.add('btnElement');
     item.appendChild(listItem);
-    button.addEventListener('click', function(event){
+    button.addEventListener('click', function(){
     showDetails(pokemon);
     
      })  
@@ -41,11 +40,11 @@ const pokemonRepository = (function(){
 
   function showLoadingMessage() {
     window.scrollTo(0, 0)
-    window.onload = function(){ document.getElementById("loading").style.display = "none" }
+    window.onload = function(){ document.getElementById('loading').style.display = 'none' }
   }
   // function to remove  Loading message while page has been loaded 
   function hideLoadingMessage(){
-    window.onload = function(){ document.getElementById("loading").style.display = "block" }
+    window.onload = function(){ document.getElementById('loading').style.display = 'block' }
   }
 
   // function to load data from external source.
@@ -108,10 +107,10 @@ const pokemonRepository = (function(){
 
   
       let titleElement = $('<h1>' + pokemon.name + '</h1>') 
-      modalTitle.addClass("modalTitle");
-      modalBody.addClass("modalBody");
-      modalTitle.addClass("modalTitle");
-      modalBody.addClass("modalBody");
+      modalTitle.addClass('modalTitle');
+      modalBody.addClass('modalBody');
+      modalTitle.addClass('modalTitle');
+      modalBody.addClass('modalBody');
       let contentElement = $('<p>' + 'Height of ' + pokemon.name + ' is ' + pokemon.height + '<p>');
       let imgText =   $('<p>' + 'Image of ' + pokemon.name + ' is as follows: ' + '<p>');
       let imgElement = $('<img  style="width:50%">')
@@ -153,8 +152,7 @@ const pokemonRepository = (function(){
     loadDetails: loadDetails,
     showDetails: showDetails,
     
-    
-  }
+      }
   
   })();
   
